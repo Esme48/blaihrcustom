@@ -55,7 +55,7 @@ const deleteComponent = async (req, res) => {
         params: { id: compId },
     } = req
 
-    const comp = await Component.findByIdAndRemove({
+    const comp = await Component.findByIdAndDelete({
        _id:  compId,
        createdBy: userId,
     })
