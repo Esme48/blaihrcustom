@@ -12,11 +12,15 @@ let item = null;
 let color = null;
 let status = null;
 let addingItem = null;
+let quantity = null;
+let price = null;
 
 export const handleAddEdit = () => {
   addEditDiv = document.getElementById("edit-item");
   item = document.getElementById("item");
   color = document.getElementById("color");
+  quantity = document.getElementById("quantity");
+  price = document.getElementById("price");
   status = document.getElementById("status");
   addingItem = document.getElementById("adding-item");
   const editCancel = document.getElementById("edit-cancel");
@@ -44,6 +48,8 @@ export const handleAddEdit = () => {
             body: JSON.stringify({
               item: item.value,
               color: color.value,
+              quantity: parseInt(quantity.value),
+              price: parseFloat(price.value),
               status: status.value,
             }),
           });
@@ -58,6 +64,8 @@ export const handleAddEdit = () => {
 
             item.value = "";
             color.value = "";
+            quantity.value = "";
+            price.value = "";
             status.value = "Item Pending Review";
             showItems();
           } else {
@@ -102,6 +110,8 @@ export const showAddEdit = async (compId) => {
       if (response.status === 200) {
         item.value = data.comp.item;
         color.value = data.comp.color;
+        quantity.value = data.comp.quantity;
+        price.value = data.comp.price;
         status.value = data.comp.status;
         addingItem.textContent = "update";
         message.textContent = "";

@@ -56,16 +56,24 @@ export const showItems = async () => {
 
     if (response.status === 200) {
       if (data.count === 0) {
+        console.log("itemsTableHeader:", itemsTableHeader);
+        console.log("children:", children);
+        console.log("itemsTable:", itemsTable);
         itemsTable.replaceChildren(...children); // clear table
       } else {
         for (let i = 0; i < data.components.length; i++) {
-          let rowEntry = document.createElement("tr");
+          let comp = data.components[i]
+          let rowEntry = document.createElement("tr")
+          let formattedDate = new Date(comp.date).toLocaleDateString()
 
           let editButton = `<button type="button" class="editButton" data-id="${data.components[i]._id}">edit</button>`;
           let deleteButton = `<button type="button" class="deleteButton" data-id="${data.components[i]._id}">delete</button>`;
           let rowHTML = `
             <td>${data.components[i].item}</td>
             <td>${data.components[i].color}</td>
+            <td>${typeof comp.price === "number" ? comp.price.toFixed(2) : ""}</td>
+            <td>${data.components[i].quantity}</td>
+            <td>${new Date(data.components[i].date).toLocaleDateString()}</td>
             <td>${data.components[i].status}</td>
             <td>${editButton}</td>
             <td>${deleteButton}</td>
