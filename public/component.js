@@ -61,7 +61,20 @@ export const showItems = async () => {
         console.log("itemsTable:", itemsTable);
         itemsTable.replaceChildren(...children);
       } else {
-        for (let i = 0; i < data.components.length; i++) {
+          //Added Filtering Component
+        const filterComp = {
+          "Order Not Yet Placed": 1,
+          "Order Has Been Placed And Is Being Arranged": 2,
+          "Bouquet Delivered": 3,
+        } ///Object thatt has the status types in numerical order priority
+        data.components.sort((a, b) => {
+          return (filterComp[a.status] || 5) - (filterComp[b.status] || 5);
+        })
+          //Sorts numerical values for value 'a' and 'b' that are in status based on priority value filterComp.
+          //Whatever numerical value it bets for a and b it subtracts (a-b), and then sort method is used to sort in ascending order
+          //Defaults to number 5 if it cannot find any value for status
+
+          for (let i = 0; i < data.components.length; i++) {
           //let comp = data.components[i]
           let rowEntry = document.createElement("tr");
           let formattedDate = new Date(data.components[i].date).toLocaleDateString();

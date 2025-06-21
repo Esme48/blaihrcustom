@@ -31,8 +31,8 @@ const ComponentSchema = new mongoose.Schema({
     },
     status:{
         type: String,
-        enum: ['Bouquet Order Is Pending', 'Order Has Been Placed And Is Being Arranged', 'Bouquet Delivered'],
-        default: 'Bouquet Order Is Pending',
+        enum: ['Order Not Yet Placed', 'Order Has Been Placed And Is Being Arranged', 'Bouquet Delivered'],
+        default: 'Order Not Yet Placed',
     },
     createdBy:{
         type:mongoose.Types.ObjectId,

@@ -66,7 +66,7 @@ export const handleAddEdit = () => {
             group.value = "";
             quantity.value = "";
             donation.value = "";
-            status.value = "Bouquet Order Is Pending";
+            status.value = "Order Not Yet Placed";
             showItems();
           } else {
             message.textContent = data.msg;
@@ -89,7 +89,7 @@ export const showAddEdit = async (compId) => {
   if (!compId) {
     item.value = "";
     group.value = "";
-    status.value = "Bouquet Order Is Pending";
+    status.value = "Order Not Yet Placed";
     addingItem.textContent = "add";
     message.textContent = "";
 

@@ -6,7 +6,7 @@ const getAllComponents = async (req, res) => {
     const components = await Component.find({ createdBy: req.user.userId }).sort('createdAt')
     res.status(StatusCodes.OK).json({ components, count: components.length })
 }
-
+//Added filtering component query to getAllComponents
 const getComponent = async (req, res) => {
     const { 
         user: { userId }, 
