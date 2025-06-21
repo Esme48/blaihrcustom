@@ -19,7 +19,7 @@ const ComponentSchema = new mongoose.Schema({
         enum: ['Single Bouquet (1) - $10', 'Small Bundle (3) - $25', 'Midsize Bundle (6) - $50', 'Large Spread (10) - $100'],
         maxlength: 100
     },
-    quantity: {
+    messageBox: {
         type: String,
         default: '',
         maxlength: 500,

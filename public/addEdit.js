@@ -12,14 +12,14 @@ let item = null;
 let group = null;
 let status = null;
 let addingItem = null;
-let quantity = null;
+let messageBox = null;
 let donation = null;
 
 export const handleAddEdit = () => {
   addEditDiv = document.getElementById("edit-item");
   item = document.getElementById("item");
   group = document.getElementById("group");
-  quantity = document.getElementById("quantity");
+  messageBox = document.getElementById("messageBox");
   donation = document.getElementById("donation");
   status = document.getElementById("status");
   addingItem = document.getElementById("adding-item");
@@ -48,7 +48,7 @@ export const handleAddEdit = () => {
             body: JSON.stringify({
               item: item.value,
               group: group.value,
-              quantity: quantity.value,
+              messageBox: messageBox.value,
               donation: donation.value,
               status: status.value,
             }),
@@ -64,7 +64,7 @@ export const handleAddEdit = () => {
 
             item.value = "";
             group.value = "";
-            quantity.value = "";
+            messageBox.value = "";
             donation.value = "";
             status.value = "Order Not Yet Placed";
             showItems();
@@ -110,7 +110,7 @@ export const showAddEdit = async (compId) => {
       if (response.status === 200) {
         item.value = data.comp.item;
         group.value = data.comp.group;
-        quantity.value = data.comp.quantity;
+        messageBox.value = data.comp.messageBox;
         donation.value = data.comp.donation;
         status.value = data.comp.status;
         addingItem.textContent = "update";

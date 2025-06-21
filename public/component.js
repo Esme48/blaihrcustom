@@ -91,7 +91,7 @@ export const showItems = async () => {
             <td>${data.components[i].item}</td>
             <td>${data.components[i].group}</td>
             <td>${data.components[i].donation}</td>
-            <td>${data.components[i].quantity}</td>
+            <td>${data.components[i].messageBox}</td>
             <td>${formattedDate}</td>
             <td>${data.components[i].status}</td>
             <td>${editButton}</td>
