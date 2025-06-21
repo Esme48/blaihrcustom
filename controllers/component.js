@@ -31,13 +31,13 @@ const createComponent = async (req, res) => {
 
 const updateComponent = async (req, res) => {
     const { 
-        body: { item, color },
+        body: { item, group, donation },
         user: { userId }, 
         params: { id: compId },
     } = req
 
-    if (item === '' || color === '') {
-        throw new BadRequestError('Item or Color Fields Cannot Be Empty')
+    if (item === '' || group === '' || donation === '') {
+        throw new BadRequestError('You Can Not Leave Any Fields Empty')
     }
     
     const comp = await Component.findOne({_id: compId, createdBy: userId })
@@ -45,7 +45,7 @@ const updateComponent = async (req, res) => {
     if (!comp) {
         throw new NotFoundError(`No Item Found With Id ${compId}`)
     }
-    if (comp.status === 'Item Delivered' || comp.status === 'Item Shipped' ) {
+    if (comp.status === 'Bouquet Delivered' || comp.status === 'Order Has Been Placed And Is Being Arranged' ) {
         throw new BadRequestError('This Order Cannot Be Modified')
     }
 
@@ -55,7 +55,7 @@ const updateComponent = async (req, res) => {
 
     res.status(StatusCodes.OK).json({ updatedComp })
 }
-//This is to prevent the user from performing any edits or delete any already delivered items. Used findOne to match compId, userId, with status "Item Delivered"
+//This is to prevent the user from performing any edits or delete any already delivered items. Used findOne to match compId, userId, with status "Bouquet Delivered"
 
 const deleteComponent = async (req, res) => {
     const { 
@@ -71,7 +71,7 @@ const deleteComponent = async (req, res) => {
     if(!comp){
         throw new NotFoundError(`No Component with id ${compId}`)
     }
-    if (comp.status === 'Item Delivered' || comp.status === 'Item Shipped') {
+    if (comp.status === 'Bouquet Delivered' || comp.status === 'Order Has Been Placed And Is Being Arranged') {
         throw new BadRequestError('This Order Cannot Be Modified')
     }
     await Component.findByIdAndDelete({

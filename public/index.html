@@ -64,8 +64,8 @@
     <table id="items-table">
       <tr id="items-table-header">
         <th>Item</th>
-        <th>Color</th>
-        <th>Price</th>
+        <th>Group</th>
+        <th>Donation</th>
         <th>Quantity</th>
         <th>Date</th>
         <th>Status</th>
@@ -80,27 +80,45 @@
   <div id="edit-item" style="display: none;">
     <form>
       <div>
-        <label for="item">Item:</label>
-        <input type="text" id="item" />
+        <label for="item"> Please Select A Bouquet </label>
+        <select id ="item" name="item" required>
+          <option value="Ari">Ari</option>
+          <option value="Bobbie">Bobbie</option>
+          <option value="Iris">Iris</option>
+          <option value="Jodi">Jodi</option>
+          <option value="Remy">Remy</option>
+        </select>
       </div>
       <div>
-        <label for="color">Color:</label>
-        <input type="text" id="color" />
+        <label for="donation"> Please Select A Donation Tier </label>
+        <select id ="donation" name="donation" required>
+          <option value="">-- Select A Donation Tier --</option>
+          <option value="Single Bouquet (1) - $10">Single Bouquet (1) - $10</option>
+          <option value="Small Bundle (3) - $25">Small Bundle (3) - $25</option>
+          <option value="Midsize Bundle (6) - $50">Midsize Bundle (6) - $50</option>
+          <option value="Large Spread (10) - $100">Large Spread (10) - $100</option>
+        </select>
       </div>
       <div>
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" min="0" />
+        <label for="group"> Where Would You Like This Donation To Go To? </label>
+        <select id ="group" name="group" required>
+          <option value="Hospital Patients">Hospital Patients</option>
+          <option value="Teachers">Teachers</option>
+          <option value="Survivors of Mental Health Trauma">Survivors of Mental Health Trauma</option>
+          <option value="Senior Center">Senior Center</option>
+          <option value="Paramedics">Paramedics</option>
+        </select>
       </div>
       <div>
-        <label for="price">Price:</label>
-        <input type="number" id="price" min="0" step="0.01" />
+        <label for="quantity"> Write A Custom Message To Brighten Their Day </label>
+        <input type="text" id="quantity" />
       </div>
       <div>
         <label for="status">Status:</label>
         <select id="status">
-          <option value="Item Pending Review">Item Pending Review</option>
-          <option value="Item Shipped">Item Shipped</option>
-          <option value="Item Delivered">Item Delivered</option>
+          <option value="Bouquet Order Is Pending">Bouquet Order Is Pending</option>
+          <option value="Order Has Been Placed And Is Being Arranged">Order Has Been Placed And Is Being Arranged</option>
+          <option value="Bouquet Delivered">Bouquet Delivered</option>
         </select>
       </div>
       <button type="button" id="adding-item">Add</button>

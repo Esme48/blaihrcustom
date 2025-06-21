@@ -69,15 +69,15 @@ export const showItems = async () => {
           let editButton = `<button type="button" class="editButton" data-id="${data.components[i]._id}">edit</button>`;
           let deleteButton = `<button type="button" class="deleteButton" data-id="${data.components[i]._id}">delete</button>`;
 
-          if (data.components[i].status === 'Item Delivered' || data.components[i].status === 'Item Shipped') {
+          if (data.components[i].status === 'Bouquet Delivered' || data.components[i].status === 'Order Has Been Placed And Is Being Arranged') {
             editButton = `<button type="button" disabled class="editButton" data-id="${data.components[i]._id}">edit</button>`;
             deleteButton = `<button type="button" disabled class="deleteButton" data-id="${data.components[i]._id}">delete</button>`;
           }
           //Added the component to disable the edit and delete buttons when given a specific status. Also fixed a few bugs with comp = data.components[i] and formmated Date.
           let rowHTML = `
             <td>${data.components[i].item}</td>
-            <td>${data.components[i].color}</td>
-            <td>${typeof data.components[i].price === "number" ? data.components[i].price.toFixed(2) : ""}</td>
+            <td>${data.components[i].group}</td>
+            <td>${data.components[i].donation}</td>
             <td>${data.components[i].quantity}</td>
             <td>${formattedDate}</td>
             <td>${data.components[i].status}</td>

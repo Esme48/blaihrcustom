@@ -9,18 +9,18 @@ import { showItems } from "./component.js";
 
 let addEditDiv = null;
 let item = null;
-let color = null;
+let group = null;
 let status = null;
 let addingItem = null;
 let quantity = null;
-let price = null;
+let donation = null;
 
 export const handleAddEdit = () => {
   addEditDiv = document.getElementById("edit-item");
   item = document.getElementById("item");
-  color = document.getElementById("color");
+  group = document.getElementById("group");
   quantity = document.getElementById("quantity");
-  price = document.getElementById("price");
+  donation = document.getElementById("donation");
   status = document.getElementById("status");
   addingItem = document.getElementById("adding-item");
   const editCancel = document.getElementById("edit-cancel");
@@ -47,9 +47,9 @@ export const handleAddEdit = () => {
             },
             body: JSON.stringify({
               item: item.value,
-              color: color.value,
-              quantity: parseInt(quantity.value),
-              price: parseFloat(price.value),
+              group: group.value,
+              quantity: quantity.value,
+              donation: donation.value,
               status: status.value,
             }),
           });
@@ -57,16 +57,16 @@ export const handleAddEdit = () => {
           const data = await response.json();
           if (response.status === 200 || response.status === 201) {
             if (response.status === 200) {
-              message.textContent = "The Item Was Updated.";
+              message.textContent = "Your Order Was Updated.";
             } else {
-              message.textContent = "The Item Was Created.";
+              message.textContent = "Your Order Was Placed.";
             }
 
             item.value = "";
-            color.value = "";
+            group.value = "";
             quantity.value = "";
-            price.value = "";
-            status.value = "Item Pending Review";
+            donation.value = "";
+            status.value = "Bouquet Order Is Pending";
             showItems();
           } else {
             message.textContent = data.msg;
@@ -88,8 +88,8 @@ export const handleAddEdit = () => {
 export const showAddEdit = async (compId) => {
   if (!compId) {
     item.value = "";
-    color.value = "";
-    status.value = "Item Pending Review";
+    group.value = "";
+    status.value = "Bouquet Order Is Pending";
     addingItem.textContent = "add";
     message.textContent = "";
 
@@ -109,9 +109,9 @@ export const showAddEdit = async (compId) => {
       const data = await response.json();
       if (response.status === 200) {
         item.value = data.comp.item;
-        color.value = data.comp.color;
+        group.value = data.comp.group;
         quantity.value = data.comp.quantity;
-        price.value = data.comp.price;
+        donation.value = data.comp.donation;
         status.value = data.comp.status;
         addingItem.textContent = "update";
         message.textContent = "";
@@ -119,7 +119,7 @@ export const showAddEdit = async (compId) => {
 
         setDiv(addEditDiv);
       } else {
-        message.textContent = "This Item Was Not Found";
+        message.textContent = "This Order Was Not Found";
         showItems();
       }
     } catch (err) {
