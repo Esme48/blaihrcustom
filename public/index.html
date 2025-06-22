@@ -4,16 +4,30 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Customer Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Playwrite+DE+VA+Guides&display=swap" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  
+  <title>Together, We Blossom</title>
 </head>
 <body>
-  <h1>Customer Portal</h1>
+  <nav id="navigation">
+    <ul>
+      <li><a href="welcome.html">Our Work</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="volunteer.html">Get Involved</a></li>
+      <li><a href="contact.html">Connect With Us</a></li>
+    </ul>
+  </nav>
+
+  <h1>Together We Blossom</h1>
   <hr />
   <p id="message"></p>
   <hr />
-
+ <!-- <img src="/Images/unsplashOne.jpg" /> -->
   <!-- Sign In/Register Buttons -->
-  <div id="logon-register" style="display: none;">
+  <div id="logon-register">  <!--Removed styles, it was preventing change in buttons -->
     <button type="button" id="logon">Sign In</button>
     <button type="button" id="register">Register</button>
   </div>

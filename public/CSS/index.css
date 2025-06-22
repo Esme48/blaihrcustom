@@ -1,0 +1,62 @@
+h1{
+  font-family: "Lora", serif;
+  font-size: 5rem;
+  padding-top: 0.5em;
+  text-align: center;
+  font-style: italic;  
+  color:white;
+  -webkit-text-stroke: 1.5px #8ecae6; 
+}
+
+body {
+    background-color:#c6e0ff;
+    color: black;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+
+
+}
+
+#logon-register {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+#logon-register button {
+    border: groove #2176ff;
+    gap: 5rem;
+}
+
+#logon-register button:hover {
+    background-color:#AFCBFF;
+    color:black;
+}
+
+#navigation{
+  position: sticky;
+  display: flex;
+  justify-content: space-evenly;
+  top: 0;
+  opacity: 100%;
+  width: 100% !important;
+  border-style: inset;
+  background-color: white;
+  box-sizing: content-box;
+  padding: 1em;
+}
+#navigation ul{
+  display: flex;
+  flex-direction: row;
+  gap: 4em;
+  list-style-type: none;
+  padding-bottom:0;
+  color: rgb(255,255,255);
+ 
+}
