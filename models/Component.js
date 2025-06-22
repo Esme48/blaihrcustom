@@ -3,18 +3,36 @@ const mongoose = require('mongoose')
 const ComponentSchema = new mongoose.Schema({
     item:{
         type: String,
-        required: [true, 'Please Provide The Name Of Your Item'],
+        required: [true, 'Please Select a Bouquet'],
+        enum: ['Ari', 'Bobbie', 'Iris', 'Jodi', 'Remy'],
         maxlength: 50
     },
-    color:{
+    group:{
         type: String,
-        required: [true, 'Please Provide The Color Of Your Item'],
+        required: [true, 'Where Would you Like This Donation To Go To?'],
+        enum: ['Hospital Patients', 'Teachers', 'Survivors of Mental Health Trauma', 'Senior Center', 'Paramedics', 'Search and Rescue Team'],
+        min: 0
+    },
+    donation:{
+        type: String,
+        required: [true, 'Please Select A Donation Tier'],
+        enum: ['Single Bouquet (1) - $10', 'Small Bundle (3) - $25', 'Midsize Bundle (6) - $50', 'Large Spread (10) - $100'],
         maxlength: 100
+    },
+    messageBox: {
+        type: String,
+        default: '',
+        maxlength: 500,
+    },
+    date: {
+        type: Date,
+        required: [true, 'Date Of The Order Placed'],
+        default: Date.now
     },
     status:{
         type: String,
-        enum: ['Item Pending Review', 'Item Shipped', 'Item Delivered'],
-        default: 'Item Pending Review',
+        enum: ['Order Not Yet Placed', 'Order Has Been Placed And Is Being Arranged', 'Bouquet Delivered'],
+        default: 'Order Not Yet Placed',
     },
     createdBy:{
         type:mongoose.Types.ObjectId,
