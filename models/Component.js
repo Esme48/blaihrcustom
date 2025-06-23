@@ -11,7 +11,6 @@ const ComponentSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Where Would you Like This Donation To Go To?'],
         enum: ['Hospital Patients', 'Teachers', 'Survivors of Mental Health Trauma', 'Senior Center', 'Paramedics', 'Search and Rescue Team'],
-        min: 0
     },
     donation:{
         type: String,
@@ -35,7 +34,7 @@ const ComponentSchema = new mongoose.Schema({
         default: 'Order Not Yet Placed',
     },
     createdBy:{
-        type:mongoose.Types.ObjectId,
+        type:  mongoose.Types.ObjectId,
         ref: 'User', 
         required: [true, 'Please Provide User'],
     },
