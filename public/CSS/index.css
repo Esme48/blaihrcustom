@@ -103,3 +103,36 @@ border: dotted #8ecae6;
   border-width:1dvi;
   border-style: solid;
 }
+
+/* Sign In Page Half */
+
+#logon-div {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5rem;
+  margin-left: 20rem;
+}
+
+#logon-div form {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 1.5rem;
+  width: 100%;
+}
+
+ /* Register Page Half */
+#register-div {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5rem;
+  margin-left: 15rem;
+}
+
+#register-div form {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 1.5rem;
+  width: 100%;
+}
