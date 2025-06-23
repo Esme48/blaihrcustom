@@ -1,3 +1,4 @@
+/* Page Title, Body Standard, General Navigation #8ecae6;  */
 h1{
   font-family: "Lora", serif;
   font-size: 5rem;
@@ -7,56 +8,98 @@ h1{
   color:white;
   -webkit-text-stroke: 1.5px #8ecae6; 
 }
-
+/* #c6e0ff */
 body {
-    background-color:#c6e0ff;
+    background-color: white;
     color: black;
     font-family: "Lora", serif;
     font-optical-sizing: auto;
     font-weight: bolder;
     font-style: normal;
+}
 
+#navigation{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  border-style: inset;
+  background-color: white;
+  padding: 1em;
+  text-align: center;
+  color: #0e1111;
+}
 
+/* Sign In & Register Buttons */
+hr {
+border: dotted #8ecae6;
+}
+
+#message {
+  text-align: center;
+  font-style: italic;
+  color: 	#414a4c;
+  background-color: aliceblue;
 }
 
 #logon-register {
     display: flex;
     justify-content: center;
-    gap: 5rem;
     margin-top: 2rem;
-    text-align: center;
-    font-style: normal;
-    font-size: 2rem;
 }
 
 #logon-register button {
-    border: groove #2176ff;
-    gap: 5rem;
+    border: double #c6e0ff;
+    text-align: center;
+    font-style: normal;
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+    margin: 0 0.5rem;
+    margin-left: 22rem; 
+    color: #232b2b;
+    
 }
 
 #logon-register button:hover {
-    background-color:#AFCBFF;
-    color:black;
+    background-color:#8ecae6;
+    color:white;
 }
 
-#navigation{
-  position: sticky;
-  display: flex;
+/* Images For the Sign In & Register Component */
+
+.imgContent {
   justify-content: space-evenly;
-  top: 0;
-  opacity: 100%;
-  width: 100% !important;
-  border-style: inset;
-  background-color: white;
-  box-sizing: content-box;
-  padding: 1em;
-}
-#navigation ul{
+  align-items: center;
   display: flex;
   flex-direction: row;
-  gap: 4em;
-  list-style-type: none;
-  padding-bottom:0;
-  color: rgb(255,255,255);
- 
+  
+}
+
+#sampleOnepic {
+  border-radius:10px;
+  margin: 1em;
+  max-width: 200px;
+  height: auto;
+  border-color:#0e1111;
+  border-width:1dvi;
+  border-style: solid ;
+}
+
+#sampleTwopic {
+  border-radius:10px;
+  margin: 1em;
+  max-width: 200px;
+  height: auto;
+  border-color:#0e1111;
+  border-width:1dvi;
+  border-style: solid;
+}
+
+#sampleThreepic {
+  border-radius:10px;
+  margin: 1em;
+  max-width: 200px;
+  height: auto;
+  border-color: #0e1111;
+  border-width:1dvi;
+  border-style: solid;
 }
