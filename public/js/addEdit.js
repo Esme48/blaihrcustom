@@ -33,7 +33,7 @@ export const handleAddEdit = () => {
         let method = "POST";
         let url = "/api/v1/component";
 
-        if (addingItem.textContent === "update") {
+        if (addingItem.textContent === "Submit") {
           method = "PATCH";
           url = `/api/v1/component/${addEditDiv.dataset.id}`;
         }
@@ -90,7 +90,7 @@ export const showAddEdit = async (compId) => {
     item.value = "";
     group.value = "";
     status.value = "Order Not Yet Placed";
-    addingItem.textContent = "add";
+    addingItem.textContent = "Submit";
     message.textContent = "";
 
     setDiv(addEditDiv);
@@ -113,7 +113,7 @@ export const showAddEdit = async (compId) => {
         messageBox.value = data.comp.messageBox;
         donation.value = data.comp.donation;
         status.value = data.comp.status;
-        addingItem.textContent = "update";
+        addingItem.textContent = "Submit";
         message.textContent = "";
         addEditDiv.dataset.id = compId;
 
