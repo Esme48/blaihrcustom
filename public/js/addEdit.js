@@ -90,7 +90,7 @@ export const showAddEdit = async (compId) => {
     item.value = "";
     group.value = "";
     status.value = "Order Not Yet Placed";
-    addingItem.textContent = "add";
+    addingItem.textContent = "Submit";
     message.textContent = "";
 
     setDiv(addEditDiv);
