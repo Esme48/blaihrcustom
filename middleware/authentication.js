@@ -10,7 +10,7 @@ const auth = (req, res, next) => {
         throw new UnauthenticatedError('Authentication Invalid')
     }
 
-    const token = authHeader.split(' ')[1] //We turn this into an array, and looking for the second item in that array
+    const token = authHeader.split(' ')[1]
 
     try{
         const payload = jwt.verify(token, process.env.JWT_SECRET)

@@ -1,4 +1,5 @@
 /* Page Title, Body Standard, General Navigation #8ecae6;  */
+
 h1{
   font-family: "Lora", serif;
   font-size: 5rem;
@@ -8,7 +9,6 @@ h1{
   color:white;
   -webkit-text-stroke: 1.5px #8ecae6; 
 }
-/* #c6e0ff */
 body {
     background-color: white;
     color: black;
@@ -17,7 +17,6 @@ body {
     font-weight: bolder;
     font-style: normal;
 }
-
 #navigation{
   position: sticky;
   top: 0;
@@ -30,23 +29,21 @@ body {
 }
 
 /* Sign In & Register Buttons */
+
 hr {
 border: dotted #8ecae6;
 }
-
 #message {
   text-align: center;
   font-style: italic;
   color: 	#414a4c;
   background-color: aliceblue;
 }
-
 #logon-register {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
-
 #logon-register button {
     border: double #c6e0ff;
     text-align: center;
@@ -58,7 +55,6 @@ border: dotted #8ecae6;
     color: #232b2b;
     
 }
-
 #logon-register button:hover {
     background-color:#8ecae6;
     color:white;
@@ -73,7 +69,6 @@ border: dotted #8ecae6;
   flex-direction: row;
   
 }
-
 #sampleOnepic {
   border-radius:10px;
   margin: 1em;
@@ -83,7 +78,6 @@ border: dotted #8ecae6;
   border-width:1dvi;
   border-style: solid ;
 }
-
 #sampleTwopic {
   border-radius:10px;
   margin: 1em;
@@ -93,7 +87,6 @@ border: dotted #8ecae6;
   border-width:1dvi;
   border-style: solid;
 }
-
 #sampleThreepic {
   border-radius:10px;
   margin: 1em;
@@ -112,7 +105,6 @@ border: dotted #8ecae6;
   padding: 5rem;
   margin-left: 20rem;
 }
-
 #logon-div form {
   display: flex;
   flex-direction: row;
@@ -128,7 +120,6 @@ border: dotted #8ecae6;
   padding: 5rem;
   margin-left: 15rem;
 }
-
 #register-div form {
   display: flex;
   flex-direction: row;
