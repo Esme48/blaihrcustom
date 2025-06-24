@@ -72,7 +72,6 @@ export const showItems = async () => {
         })
 
           for (let i = 0; i < data.components.length; i++) {
-        
           let rowEntry = document.createElement("tr");
           let formattedDate = new Date(data.components[i].date).toLocaleDateString();
 
