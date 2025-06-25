@@ -12,9 +12,6 @@ let customError = {
     customError.msg = Object.values(err.errors).map((item) => item.message).join(',')
     customError.statusCode = 400
   }
-  //if (err instanceof CustomAPIError) {
-   // return res.status(err.statusCode).json({ msg: err.message })
-  //}
   if (err.code && err.code === 11000){
     customError.msg = `Duplicate Value Entered For ${Object.keys(err.keyValue)} Field, Please Choose Another Value`
     customError.statusCode = 400

@@ -6,7 +6,7 @@ const getAllComponents = async (req, res) => {
     const components = await Component.find({ createdBy: req.user.userId }).sort('createdAt')
     res.status(StatusCodes.OK).json({ components, count: components.length })
 }
-//Added filtering component query to getAllComponents
+
 const getComponent = async (req, res) => {
     const { 
         user: { userId }, 
@@ -55,7 +55,6 @@ const updateComponent = async (req, res) => {
 
     res.status(StatusCodes.OK).json({ updatedComp })
 }
-//This is to prevent the user from performing any edits or delete any already delivered items. Used findOne to match compId, userId, with status "Bouquet Delivered"
 
 const deleteComponent = async (req, res) => {
     const { 

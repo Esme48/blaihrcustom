@@ -61,21 +61,17 @@ export const showItems = async () => {
         console.log("itemsTable:", itemsTable);
         itemsTable.replaceChildren(...children);
       } else {
-          //Added Filtering Component
+          
         const filterComp = {
           "Order Not Yet Placed": 1,
           "Order Has Been Placed And Is Being Arranged": 2,
           "Bouquet Delivered": 3,
-        } ///Object thatt has the status types in numerical order priority
+        } 
         data.components.sort((a, b) => {
-          return (filterComp[a.status] || 5) - (filterComp[b.status] || 5);
+          return (filterComp[a.status] || 1) - (filterComp[b.status] || 1);
         })
-          //Sorts numerical values for value 'a' and 'b' that are in status based on priority value filterComp.
-          //Whatever numerical value it bets for a and b it subtracts (a-b), and then sort method is used to sort in ascending order
-          //Defaults to number 5 if it cannot find any value for status
 
           for (let i = 0; i < data.components.length; i++) {
-          //let comp = data.components[i]
           let rowEntry = document.createElement("tr");
           let formattedDate = new Date(data.components[i].date).toLocaleDateString();
 
@@ -86,7 +82,7 @@ export const showItems = async () => {
             editButton = `<button type="button" disabled class="editButton" data-id="${data.components[i]._id}">edit</button>`;
             deleteButton = `<button type="button" disabled class="deleteButton" data-id="${data.components[i]._id}">delete</button>`;
           }
-          //Added the component to disable the edit and delete buttons when given a specific status. Also fixed a few bugs with comp = data.components[i] and formmated Date.
+
           let rowHTML = `
             <td>${data.components[i].item}</td>
             <td>${data.components[i].group}</td>
